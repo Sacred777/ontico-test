@@ -34,15 +34,28 @@ body {
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
-  color: var(--color-white);
+  color: var(--color-black);
 }
 
 img {
   max-width: 100%;
 }
 
-.address-reset {
-  font-style: normal;
+.p-reset {
+  margin: 0;
+  padding: 0;
+}
+
+.title-reset {
+  margin: 0;
+  padding: 0;
+}
+
+.btn-reset {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 .list-reset {
@@ -56,30 +69,10 @@ img {
   text-decoration: none;
 }
 
-.btn-reset {
-  padding: 0;
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-}
-
 :root {
   --color-white: #fff;
   --color-black: #000;
-  --color-red: #ff0000;
-  --color-haiti: #262529;
   --color-sl_blue: #6b46d4;
-  --color-pink_swan: #b5b5b5;
-  --color-persimmon: #ea4a00;
-  --color-cerulean: #00709e;
-  --color-brown: #b13230;
-  --color-tang_yellow: #ffcb00;
-  --color-el_indigo: #8800ff;
-  --color-whisper: #ededed;
-  --color-malibu : #61b2d6;
-  --color-cobalt: #005da7;
-  --color-med_blue: #0217ca;
-  --color-e_indigo: #5900ff;
 }
 
 .site-container {
@@ -87,9 +80,9 @@ img {
 }
 
 .container {
-  max-width: 1944px;
+  max-width: 1712px;
   margin: 0 auto;
-  padding: 0 14px;
+  padding: 0 12px;
 }
 
 .site-title {
@@ -98,12 +91,93 @@ img {
   overflow: hidden;
 }
 
+.events {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 50px 57px ;
+  padding-top: 133px;
+  padding-bottom: 230px;
+}
+
+.event {
+  display: grid;
+  grid-template-rows: 41px 105px 1fr 1fr 30px 42px 43px;
+  padding: 25px 30px 35px;
+  background: var(--color-white);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+  border-radius: 10px;
+}
+
+.event__date {
+  display: block;
+  font-weight: 500;
+  line-height: 22px;
+}
+
+.event__logo {
+  height: 90px;
+}
+
+.event__title {
+  margin-bottom: 15px;
+  font-size: 24px;
+  line-height: 29px;
+}
+
+.event__brief {
+  margin-bottom: 17px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.location,
+.site {
+  display: flex;
+}
+
+.location__icon,
+.site__icon {
+  margin-right: 7px;
+}
+
+.location__place,
+.site__url {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.site__url {
+  color: var(--color-black);
+  text-decoration-line: underline;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+}
+
+.button__primary {
+  margin-right: 30px;
+  padding: 9px 20px;
+  line-height: 22px;
+  color: var(--color-white);
+  background-color: var(--color-sl_blue);
+  text-decoration-line: none;
+}
+
+.button_secondary {
+  line-height: 22px;
+  text-decoration-line: underline;
+  color: var(--color-sl_blue);
+}
+
 .footer {
   background-color: var(--color-black);
 }
 
 .footer__container {
-  padding-top: 63px;
   padding-bottom: 35px;
 }
 
@@ -112,14 +186,14 @@ img {
 }
 
 .contacts__left {
-  width: 31%;
+  padding-top: 60px;
+  width: 50%;
 }
 
 .contacts__right {
   width: 100%;
   background-image: url("../img/ontico2022.png");
   background-repeat: no-repeat;
-  background-size: contain;
   background-position: right;
 }
 
@@ -129,12 +203,19 @@ img {
 }
 
 .contacts__item:not(:last-child) {
-  margin-bottom: 30px;
+  margin-bottom: 24px;
+  color: var(--color-white);
 }
 
 .contacts__title {
-  margin-right: 5px;
   font-weight: 500;
+  line-height: 22px;
+  color: var(--color-white);
+}
+
+.contacts__address {
+  color: var(--color-white);
+  font-style: normal;
 }
 
 .calendar {
@@ -144,20 +225,22 @@ img {
 .calendar__left {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 17%;
+  padding-left: 23px;
+  width: 20%;
 }
 
 .calendar__year {
-  padding: 40px 0;
+  padding-top: 12px;
   font-size: 36px;
   line-height: 43px;
   text-align: center;
   letter-spacing: -0.05em;
+  color: var(--color-white);
 }
 
 .calendar__right {
   display: flex;
+  padding-right: 40px;
   align-items: center;
   width: 100%;
 }
@@ -171,7 +254,7 @@ img {
   position: absolute;
   top: 6px;
   left: 0;
-    width: 100%;
+  width: 100%;
   height: 2px;
   background-color: var(--color-white);
   opacity: 0.35;
@@ -180,11 +263,10 @@ img {
 .month__list {
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 
 .month__item:not(:last-child) {
-  margin-right: 58px;
+  margin-right: 59px;
 }
 
 .month__name:hover {
@@ -203,6 +285,7 @@ img {
   line-height: 22px;
   text-align: center;
   letter-spacing: -0.05em;
+  color: var(--color-white);
 }
 
 .month__name::before {
